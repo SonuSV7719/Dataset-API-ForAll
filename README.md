@@ -34,3 +34,32 @@ npm install
 nodemon index.js
 ```
 
+## How to use it
+
+To use this API, you can simply access our deployed link at https://actual-dataset-api.onrender.com. From there, you can fetch the data you need and integrate it into your own projects.
+
+Following are some use cases of it
+
+> 1. To fetch all the required datasets/collections use following link with your project
+
+```
+https://actual-dataset-api.onrender.com/getCollections
+```
+
+> 2. To fetch all the required columns of any dataset you can use following link 
+
+```
+https://actual-dataset-api.onrender.com/getColumns/COLLECTION_NAME
+```
+
+just replace COLLECTION_NAME which you got from 1st link
+
+> 3. To fetch all the values of any specific column in dataset use following link
+
+```
+https://actual-dataset-api.onrender.com/getColumnData/COLLECTION_NAME?columnName=COLUMN_NAME
+```
+
+just replace COLLECTION_NAME with your collection name and COLUMN_NAME with your required column which you got from previous steps
+
+
