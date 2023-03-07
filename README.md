@@ -63,3 +63,52 @@ https://actual-dataset-api.onrender.com/getColumnData/COLLECTION_NAME?columnName
 just replace COLLECTION_NAME with your collection name and COLUMN_NAME with your required column which you got from previous steps
 
 
+## How to use it with python
+
+Use following general code snippet 
+
+> 1. To fetch all the required datasets/collections use following code snippet
+
+```
+import requests
+
+response = requests.get("https://actual-dataset-api.onrender.com/getCollections")
+
+if response.status_code == 200:
+    data = response.json() 
+    print(data)
+    print(data['collectionsList'])
+else:
+    print("Request failed with status code:", response.status_code)
+```
+
+
+> 2. To fetch all the required columns of any dataset you can use following code snippet
+
+```
+import requests
+response = requests.get("https://actual-dataset-api.onrender.com/getColumns/COLLECTION_NAME")
+
+if response.status_code == 200:
+    data = response.json() 
+    print(data)
+else:
+    print("Request failed with status code:", response.status_code)
+```
+just replace COLLECTION_NAME which you got from 1st link
+
+> 3. To fetch all the values of any specific column in dataset use following code snippet
+
+```
+import requests
+response = requests.get("https://actual-dataset-api.onrender.com/getColumnData/COLLECTION_NAME?columnName=COLUMN_NAME")
+
+if response.status_code == 200:
+    data = response.json() 
+    print(data)
+    print(data['columnDataList'])
+else:
+    print("Request failed with status code:", response.status_code)
+```
+
+just replace COLLECTION_NAME with your collection name and COLUMN_NAME with your required column which you got from previous steps
